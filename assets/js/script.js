@@ -98,4 +98,25 @@ function guessedWord() {
     document.getElementById('mistakes').innerHTML = mistakes;
   }
   
+  /**
+ * Resets the game state to start a new game.
+ */
+function reset() {
+    mistakes = 0;
+    guessed = [];
+    document.getElementById('hangmanPic').src = "./assets/images/0.jpg";
+  
+    randomWord();
+    guessedWord();
+    updateMistakes();
+    generateButtons();
+  }
+  
+  // Set the maxWrong value on the page
+  document.getElementById('maxWrong').innerHTML = maxWrong;
+  
+  // Initialize the game
+  randomWord();
+  generateButtons();
+  guessedWord();
   
