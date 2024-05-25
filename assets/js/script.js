@@ -64,5 +64,22 @@ function handleGuess(chosenLetter) {
 function updateHangmanPicture() {
     document.getElementById('hangmanPic').src = './assets/images/' + mistakes + '.jpg';
   }
+/**
+ * Checks if the player has won the game and updates the DOM accordingly.
+ */
+function checkIfGameWon() {
+    if (wordStatus === answer) {
+      document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    }
+  }
+/**
+ * Checks if the player has lost the game and updates the DOM accordingly.
+ */
+function checkIfGameLost() {
+    if (mistakes === maxWrong) {
+      document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
+      document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+    }
+  }
   
   
