@@ -58,4 +58,11 @@ function handleGuess(chosenLetter) {
       updateHangmanPicture();
     }
   }
+  /**
+ * Updates the hangman picture based on the number of mistakes made.
+ */
+function updateHangmanPicture() {
+    document.getElementById('hangmanPic').src = './assets/images/' + mistakes + '.jpg';
+  }
+  
   
