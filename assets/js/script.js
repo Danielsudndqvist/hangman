@@ -3,6 +3,12 @@ const europeanCountries = [
     "FRANCE", "GERMANY", "GREECE", "HUNGARY", "ICELAND", "IRELAND", "ITALY",
     "NORWAY", "POLAND", "PORTUGAL", "RUSSIA", "SPAIN", "SWEDEN", "TURKEY", "UKRAINE",
   ];
+const keyboard = document.querySelector(".keyboard");
+let answer = '';
+let maxWrong = 6;
+let mistakes = 0;
+let guessed = [];
+let wordStatus = null;
 
 
 
@@ -34,3 +40,22 @@ function randomWord() {
       button.addEventListener('click', () => handleGuess(button.getAttribute('data-letter')));
     });
   }
+  /**
+ * Handles the player's guess when a letter button is clicked.
+ * @param {string} chosenLetter - The letter guessed by the player.
+ */
+function handleGuess(chosenLetter) {
+    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+    document.getElementById(chosenLetter).setAttribute('disabled', true);
+  
+    if (answer.indexOf(chosenLetter) >= 0) {
+      guessedWord();
+      checkIfGameWon();
+    } else if (answer.indexOf(chosenLetter) === -1) {
+      mistakes++;
+      updateMistakes();
+      checkIfGameLost();
+      updateHangmanPicture();
+    }
+  }
+  
