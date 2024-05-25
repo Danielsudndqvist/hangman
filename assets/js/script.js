@@ -81,5 +81,21 @@ function checkIfGameLost() {
       document.getElementById('keyboard').innerHTML = 'You Lost!!!';
     }
   }
+
+  /**
+ * Updates the displayed word to show the correctly guessed letters.
+ */
+function guessedWord() {
+    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+  
+    document.getElementById('wordSpotlight').innerHTML = wordStatus;
+  }
+  
+  /**
+   * Updates the displayed number of mistakes made by the player.
+   */
+  function updateMistakes() {
+    document.getElementById('mistakes').innerHTML = mistakes;
+  }
   
   
