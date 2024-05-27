@@ -48,6 +48,8 @@ you can see your and others' win streaks.
 ### Css valitator
 ![image](https://github.com/Danielsudndqvist/hangman/assets/163173315/e69e77b0-0e84-45f2-90e4-34c0f91bf54e)
 
+## JS validator 
+![image](https://github.com/Danielsudndqvist/hangman/assets/163173315/69faa7ca-8014-46cc-b358-94288e4f3650)
 
 
 
