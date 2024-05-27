@@ -30,3 +30,5 @@ says you lost, but it lets you reset the game and try again using the reset butt
 
 
 ### Features Left to Implement
+A feature to add in the future is to create a scoreboard and a leaderboard where 
+you can see your and others' win streaks.
