@@ -39,6 +39,17 @@ you can see your and others' win streaks.
 
 ## Testing
 
+### Lighthouse testing
+![image](https://github.com/Danielsudndqvist/hangman/assets/163173315/60808ff5-62d4-4907-84b9-91f2428155dc)
+
+### HTML validator 
+![image](https://github.com/Danielsudndqvist/hangman/assets/163173315/69128fc5-a4ab-4823-8a88-50c2e1bbb751)
+
+### Css valitator
+![image](https://github.com/Danielsudndqvist/hangman/assets/163173315/e69e77b0-0e84-45f2-90e4-34c0f91bf54e)
+
+
+
 
 ## Depolyment 
 
