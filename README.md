@@ -1,6 +1,6 @@
 # Hangman-game
 
-Deployment : 
+Deployment : https://danielsudndqvist.github.io/hangman/
 
 ## Overview
 This is and game where you try to guess the correct european country using one letter at a time,
@@ -38,3 +38,13 @@ you can see your and others' win streaks.
 
 
 ## Testing
+
+
+## Depolyment 
+
+I have deployed the website with GitHub by going into the settings tab. After that, I chose the Master Branch in the source tab. 
+After I picked which branch to deploy from, the site automatically refreshes and tells me that the site is live. 
+https://danielsudndqvist.github.io/hangman/
+The site was deployed to GitHub pages. The steps to deploy are as follows: 
+In the GitHub repository, navigate to the Settings tab From the source section drop-down menu, select the Master Branch Once the master branch has been selected, 
+the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
