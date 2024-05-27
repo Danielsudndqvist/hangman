@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for character set, viewport, and IE compatibility -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/css/style.css"
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Preconnect links for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Link to Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 <body>
 <title>Hangman-game</title>
 <div class="container">
+  <!-- Heading for the game title -->
   <h1 class>Hangman</h1>
+  <!-- Container to display the word with guessed letters -->
   <div id="wordSpotlight"></div>
+  <!-- Container to display mistakes and maximum allowed wrong guesses -->
   <div id="guessdiv">
-<div id="mistakes"></div>
-guesses out of 
-<div id="maxWrong"></div>
+    <div id="mistakes"></div>
+    guesses out of 
+    <div id="maxWrong"></div>
   </div>
-
-<img id="hangmanPic" src="./assets/images/0.jpg" alt="Hangman">
-<div id="keyboard"></div>
-
-<button onclick="reset()">Reset</button>
-<script src="./assets/js/script.js"></script>
+  <!-- Image element to display the hangman's picture -->
+  <img id="hangmanPic" src="./assets/images/0.jpg" alt="Hangman">
+  <!-- Container for the keyboard buttons -->
+  <div id="keyboard"></div>
+  <!-- Button to reset the game -->
+  <button onclick="reset()">Reset</button>
+  <!-- JavaScript file for game functionality -->
+  <script src="./assets/js/script.js"></script>
+</div>
 </body>
 </html>
