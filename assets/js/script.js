@@ -3,7 +3,7 @@ const europeanCountries = [
   "FRANCE", "GERMANY", "GREECE", "HUNGARY", "ICELAND", "IRELAND", "ITALY",
   "NORWAY", "POLAND", "PORTUGAL", "RUSSIA", "SPAIN", "SWEDEN", "TURKEY", "UKRAINE",
 ];
-const keyboard = document.querySelector(".keyboard");
+
 let answer = '';
 let maxWrong = 6;
 let mistakes = 0;
@@ -32,7 +32,7 @@ function generateButtons() {
     </button>
   `).join('');
 
-  keyboard.innerHTML = buttonsHTML;
+  document.getElementById('keyboard').innerHTML = buttonsHTML;
 
   document.querySelectorAll('button[data-letter]').forEach(button => {
     button.addEventListener('click', () => handleGuess(button.getAttribute('data-letter')));
@@ -44,17 +44,19 @@ function generateButtons() {
  * @param {string} chosenLetter - The letter guessed by the player.
  */
 function handleGuess(chosenLetter) {
-  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
-  document.getElementById(chosenLetter).setAttribute('disabled', true);
+  if (guessed.indexOf(chosenLetter) === -1) {
+    guessed.push(chosenLetter);
+    document.getElementById(chosenLetter).setAttribute('disabled', true);
 
-  if (answer.indexOf(chosenLetter) >= 0) {
-    guessedWord();
-    checkIfGameWon();
-  } else if (answer.indexOf(chosenLetter) === -1) {
-    mistakes++;
-    updateMistakes();
-    checkIfGameLost();
-    updateHangmanPicture();
+    if (answer.indexOf(chosenLetter) >= 0) {
+      guessedWord();
+      checkIfGameWon();
+    } else {
+      mistakes++;
+      updateMistakes();
+      checkIfGameLost();
+      updateHangmanPicture();
+    }
   }
 }
 
@@ -62,7 +64,7 @@ function handleGuess(chosenLetter) {
  * Updates the hangman picture based on the number of mistakes made.
  */
 function updateHangmanPicture() {
-  document.getElementById('hangmanPic').src = './assets/images/' + mistakes + '.jpg';
+  document.getElementById('hangmanPic').src = `./assets/images/${mistakes}.jpg`;
 }
 
 /**
@@ -70,7 +72,7 @@ function updateHangmanPicture() {
  */
 function checkIfGameWon() {
   if (wordStatus === answer) {
-    keyboard.innerHTML = 'You Won!!!';
+    document.getElementById('keyboard').innerHTML = 'You Won!!!';
   }
 }
 
@@ -79,8 +81,8 @@ function checkIfGameWon() {
  */
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
-    document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-    keyboard.innerHTML = 'You Lost!!!';
+    document.getElementById('wordSpotlight').innerHTML = `The answer was: ${answer}`;
+    document.getElementById('keyboard').innerHTML = 'You Lost!!!';
   }
 }
 
