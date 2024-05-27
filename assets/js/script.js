@@ -22,7 +22,7 @@ function randomWord() {
  * Adds event listeners to each button to handle guesses.
  */
 function generateButtons() {
-  const buttonsHTML = 'ABCDEFGHIJKLMNOPQRSUVWXYZ'.split('').map(letter => `
+  const buttonsHTML = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter => `
     <button
       class="btn btn-lg btn-primary m-2"
       id="${letter}"
@@ -32,7 +32,7 @@ function generateButtons() {
     </button>
   `).join('');
 
-  document.getElementById('keyboard').innerHTML = buttonsHTML;
+  keyboard.innerHTML = buttonsHTML;
 
   document.querySelectorAll('button[data-letter]').forEach(button => {
     button.addEventListener('click', () => handleGuess(button.getAttribute('data-letter')));
@@ -70,7 +70,7 @@ function updateHangmanPicture() {
  */
 function checkIfGameWon() {
   if (wordStatus === answer) {
-    document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    keyboard.innerHTML = 'You Won!!!';
   }
 }
 
@@ -80,7 +80,7 @@ function checkIfGameWon() {
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
     document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-    document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+    keyboard.innerHTML = 'You Lost!!!';
   }
 }
 
